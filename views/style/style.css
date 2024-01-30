@@ -1,0 +1,74 @@
+/* FONTS  */
+
+@font-face {
+    font-family: RedHat;
+    src: url(../../assets/fonts/RedHatDisplay-VariableFont_wght.ttf);
+}
+
+/* MAIN STYLE */
+
+body {
+    color: black;
+    margin: 0;
+    font-family: RedHat;
+}
+
+
+/* NAVBAR */
+
+nav {
+    position: fixed;
+    width: 100vw;
+    /* GLASS CSS */
+    background: rgba(255, 255, 255, 0.32);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(13.5px);
+    -webkit-backdrop-filter: blur(13.5px);
+}
+
+li {
+    list-style-type: none;
+}
+
+nav ul {
+    display: flex;
+    justify-content: end;
+    margin-right: 2rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    margin-left: 1rem;
+}
+
+
+/* HOMEPAGE  */
+
+.wrapper {
+    padding-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.wrapper h1 {
+    margin: 0;
+    text-align: center;
+}
+
+.wrapper img {
+    margin-top: 2rem;
+    width: 15rem;
+    height: 15rem;
+}
+
+/* PRODUCTS LIST */
+
+.product-list {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1.5rem;
+    row-gap: 2rem;
+}
