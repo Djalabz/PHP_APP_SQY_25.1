@@ -43,10 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
         }
     }
 }
-
 ?>
-
-
 
 <div class="wrapper">
     <h1>LOGIN</h1>

@@ -100,3 +100,10 @@ input[type="submit"] {
     margin-top: 4rem;
 }
 
+/* PROFILE PAGE */
+
+.profile-avatar {
+    width: 7rem !important;
+    height: 8rem !important;
+    border-radius: 100%;
+}
