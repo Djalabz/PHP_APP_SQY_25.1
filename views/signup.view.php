@@ -1,7 +1,10 @@
 <?php 
 
+ob_start();
+
 include '../partials/header.php';
 include '../config/pdo.php';
+include '../utils/functions.php';
 
 
 // On vérifie que le form ait été soumis 
@@ -21,19 +24,28 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
             if (filter_var($email, FILTER_VALIDATE_EMAIL))  {
                 // Création du hash
                 $hash = password_hash($password, PASSWORD_DEFAULT);
-        
-                // On écrit notre requete préparée 
-                $sql = "INSERT INTO users(name, email, password) VALUES(?, ?, ?)";
-                $stmt = $pdo->prepare($sql);
-                $result = $stmt->execute([$name, $email, $hash]);
-        
-                // Si notre execute s'est bien déroulé on redirige vers une page de succès
-                if ($result) {
-                    header('Location: signup-sucess.view.php');
-                // Sinon on affiche l'erreur en question
+
+                // Appel de la fonction checkExists() pour vérifier si un user n'existe pas déjà en BDD
+                if (checkExists('name', $name, $pdo)) {
+                    $error = "Le nom existe déjà en BDD";
+                } else if (checkExists('email', $email, $pdo)) {
+                    $error = "L'email est déjà utilisé";
                 } else {
-                    $error = "Erreur lors de l'ajout : " . $stmt->errorInfo();
-                }
+                    // On écrit notre requete préparée 
+                    $sql = "INSERT INTO users(name, email, password) VALUES(?, ?, ?)";
+                    $stmt = $pdo->prepare($sql);
+                    $result = $stmt->execute([$name, $email, $hash]);
+            
+                    // Si notre execute s'est bien déroulé on redirige vers une page de succès
+                    if ($result) {
+                        header('Location: signup-sucess.view.php');
+                        ob_end_flush();
+                    // Sinon on affiche l'erreur en question
+                    } else {
+                        $error = "Erreur lors de l'ajout : " . print_r($stmt->errorInfo());
+                    }
+                } 
+        
             } else {
                 $error = "L'email n'est pas au bon format";
             }

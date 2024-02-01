@@ -96,7 +96,7 @@ input[type="submit"] {
     height: 2rem;
 }
 
-.signup-form {
+.signup-form, .login-form {
     margin-top: 4rem;
 }
 
