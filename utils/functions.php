@@ -1,0 +1,4 @@
+<?php
+
+// FICHIER DE FONCTIONS UTILES
+
