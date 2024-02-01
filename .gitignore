@@ -1,1 +1,6 @@
 /config
+
+/vendor
+
+composer.json
+composer.lock
