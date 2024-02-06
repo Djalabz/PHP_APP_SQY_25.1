@@ -33,6 +33,7 @@ nav {
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(13.5px);
     -webkit-backdrop-filter: blur(13.5px);
+    height: 3.5rem;
 }
 
 li {
@@ -75,11 +76,11 @@ nav a {
     text-align: center;
 } */
 
-.wrapper img {
+/* .wrapper img {
     margin-top: 2rem;
     width: 15rem;
     height: 15rem;
-} 
+}  */
 
 /* PRODUCTS LIST */
 
@@ -139,9 +140,51 @@ button {
 
 /* PROFILE PAGE */
 
-.profile-avatar {
-    width: 7rem !important;
-    height: 8rem !important;
+
+.avatar {
+    width: 8.5rem;
+    height: 9rem;
     border-radius: 100%;
 }
 
+.profile-card {
+    width: 50rem;
+    height: 27rem;
+    margin: auto;
+    display: flex;
+    -webkit-box-shadow: 1px 15px 12px -6px rgba(166,166,166,1);
+    -moz-box-shadow: 1px 15px 12px -6px rgba(166,166,166,1);
+    box-shadow: 1px 15px 12px -6px rgba(166,166,166,1);
+    border-radius: 20px;
+}
+
+.profile-card section {
+    display: flex;
+}
+
+.left {
+    background: linear-gradient(90deg, darkslategrey 0%, darkgray 100%);
+    width: 15rem;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+}
+
+.right {
+    width: 35rem;
+    padding: 1.5rem;
+}
+
+.right div {
+    width: 17.5rem;
+}
+
+.email, .phone {
+    display: block;
+}
