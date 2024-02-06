@@ -17,3 +17,5 @@
         <li><a href="signup.view.php">Signup</a></li>
     </ul>
 </nav>
+
+<div class="wrapper">

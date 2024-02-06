@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
 }
 ?>
 
-<div class="wrapper">
+
     <h1>LOGIN</h1>
 
     <form class="login-form" method="POST">
@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     <?php if (isset($error)) : ?>
         <p class="error"><?= $error ?></p>
     <?php endif ?>
-</div>
+
 
 <?php 
 
