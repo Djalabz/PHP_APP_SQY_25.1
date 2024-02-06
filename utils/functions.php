@@ -13,3 +13,13 @@ function checkExists($field, $param, $pdo) {
     // Opérateur ternaire cad autre manière d'écrire des if ... else 
     return ($stmt->rowCount() > 0) ? true : false;
 }
+
+
+// FONCTION DUMP AND DIE - pour inspecter des variables
+
+function dd($param) {
+    echo "<pre>";
+    var_dump($param);
+    echo "</pre>";
+    die();
+}

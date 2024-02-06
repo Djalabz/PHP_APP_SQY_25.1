@@ -8,7 +8,7 @@ if (isset($_GET['product'])) {
 }
 
 ?>
-<div class="wrapper">
+
     <h1>Page de produit</h1>
 
         <?php foreach($products as $product) : ?>
@@ -18,8 +18,7 @@ if (isset($_GET['product'])) {
                     <h2><?= $product['title'] ?></h2>
                     <h3><?= substr($product['description'], 0, 50) ?> ...</h3>
                     <h2><?= $product['price'] ?> €</h2>
-                    <button><a>Ajouter au panier</a></button>
+                    <button><a href="cart.view.php?product=<?= $product['id'] ?>">Ajouter au panier</a></button>
                 </div>
             <?php endif ?>
         <?php endforeach ?>
-</div>

@@ -9,19 +9,12 @@ require_once '../vendor/autoload.php';
 
 ?>
 
-<div class="wrapper">
     <h1>Page de contact</h1>
         <!-- Notre formulaire de contact avec méthode POST -->
         <form class="contact-form" method="POST">
-            <label for="email">Email :</label>
-            <input name="email" type="email">
-
-            <label for="subject">Subject : </label>
-            <input name="subject" type="text">
-
-            <label for="body">Message :</label>
-            <textarea name="body" cols="30" rows="10"></textarea>
-
+            <input name="email" type="email" placeholder="Votre mail ici ...">
+            <input name="subject" type="text" placeholder="Le sujet de votre mail ...">
+            <textarea name="body" cols="30" rows="10" placeholder="Votre message ..."></textarea>
             <input id="contact-sub" name="submit" type="submit">
         </form>
 
@@ -29,7 +22,7 @@ require_once '../vendor/autoload.php';
         <?php if (isset($error)) : ?>
             <p class="error"><?= $error ?></p>
         <?php endif ?>
-</div>
+
 
 <?php
 
