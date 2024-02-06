@@ -23,6 +23,8 @@ h1 {
     margin-bottom: 3rem;
 }
 
+
+
 /* NAVBAR */
 
 nav {
@@ -36,6 +38,47 @@ nav {
     height: 3.5rem;
 }
 
+.burger-menu {
+    width: 2rem;
+    height: 2rem;
+    position: fixed;
+    left: 1rem;
+    top: 0.6rem;
+    cursor: pointer;
+}
+
+.menu {
+    position: fixed;
+    left: -100%;
+    width: 100vw;
+    height: 100vh;
+    background-color:lightgray;
+    transition: left 0.2s ease-in-out;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.close-menu {
+    font-size: 1.5rem;
+    position: absolute;
+    top: 0rem;
+    left: 2rem;
+}
+
+.menu li {
+    margin-bottom: 1rem;
+    
+}
+
+.open {
+    left: 0;
+}
+
 li {
     list-style-type: none;
 }
@@ -43,13 +86,11 @@ li {
 nav ul {
     display: flex;
     justify-content: end;
-    margin-right: 2rem;
 }
 
 nav a {
     text-decoration: none;
     color: black;
-    margin-left: 1rem;
 }
 
 
@@ -141,9 +182,9 @@ button {
 /* PROFILE PAGE */
 
 
-.avatar {
-    width: 8.5rem;
-    height: 9rem;
+.profile-card img {
+    width: 8.5rem !important;
+    height: 9rem !important;
     border-radius: 100%;
 }
 
@@ -188,7 +229,6 @@ button {
 .email, .phone {
     display: block;
 }
-
 
 /* FOOTER */
 

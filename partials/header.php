@@ -15,12 +15,16 @@ $_SERVER['REQUEST_URI'] === '/index.php' ? $path = 'views/' : $path = '';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eshop PHP</title>
     <link rel="stylesheet" href="<?= $path ?>style/style.css">
-    <script src="./scripts/app.js" defer></script>
+    <script src="../scripts/app.js" defer></script>
 </head>
 <body>
 
 <nav>
-    <ul>
+
+    <img src="../assets/icons/burger.png" class="burger-menu">
+
+    <ul class="menu">
+        <p class="close-menu">X</p>
         <li><a href="../index.php">Accueil</a></li>
         <li><a href="<?= $path ?>contact.view.php">Contact</a></li>
         <?php if (isset($_SESSION['user']['logged']) && $_SESSION['user']['logged']) : ?>

@@ -1,7 +1,15 @@
-const articles = ['btn1', 'btn2', 'btn3'];
+// On récupère des éléments HTML via leur classe afin de les utiliser ultérieurement
+const menu = document.querySelector('.menu');
+const burger = document.querySelector('.burger-menu');
+const close_btn = document.querySelector('.close-menu');
 
-articles.forEach((btn) => {
-    const btn = document.querySelector('#'+btn);
+// Ici on ajoute un écouteur d'événement pour le click sur notre burger bouton
+burger.addEventListener('click', () => {
+    menu.classList.toggle('open');
 })
 
-console.log(btn1);
+// Meme chose sur le bouton de fermeture
+close_btn.addEventListener('click', () => {
+    menu.classList.remove('open');
+})
+
