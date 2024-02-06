@@ -4,7 +4,11 @@ session_start();
 
 // Opérateur ternaire : Si notre URI vaut index.php alors le chemin vers les autres pages 
 // et la page de style doivent changer
-$_SERVER['REQUEST_URI'] === '/index.php' ? $path = 'views/' : $path = '';
+if ($_SERVER['REQUEST_URI'] === '/index.php' || $_SERVER['REQUEST_URI'] === '/') { 
+    $path = 'views/';
+} else {
+    $path = '';
+}
 
 ?>
 

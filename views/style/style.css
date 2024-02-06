@@ -49,18 +49,18 @@ nav {
 
 .menu {
     position: fixed;
-    left: -100%;
+    left: -100vw;
     width: 100vw;
     height: 100vh;
-    background-color:lightgray;
-    transition: left 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
     margin: 0;
     padding: 0;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
     font-size: 2rem;
+    opacity: 0;
 }
 
 .close-menu {
@@ -72,11 +72,11 @@ nav {
 
 .menu li {
     margin-bottom: 1rem;
-    
 }
 
 .open {
-    left: 0;
+    left: 0vw;
+    opacity: 100;
 }
 
 li {
