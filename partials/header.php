@@ -15,6 +15,7 @@ $_SERVER['REQUEST_URI'] === '/index.php' ? $path = 'views/' : $path = '';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eshop PHP</title>
     <link rel="stylesheet" href="<?= $path ?>style/style.css">
+    <script src="./scripts/app.js" defer></script>
 </head>
 <body>
 
@@ -23,6 +24,7 @@ $_SERVER['REQUEST_URI'] === '/index.php' ? $path = 'views/' : $path = '';
         <li><a href="../index.php">Accueil</a></li>
         <li><a href="<?= $path ?>contact.view.php">Contact</a></li>
         <?php if (isset($_SESSION['user']['logged']) && $_SESSION['user']['logged']) : ?>
+            <li><a href="<?= $path ?>profile.view.php">Profile</a></li>
             <li><a href="<?= $path ?>products.view.php">Produits</a></li>
             <li><a href="<?= $path ?>logout.php">Logout</a></li>
         <?php else : ?>

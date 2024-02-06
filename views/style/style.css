@@ -76,11 +76,11 @@ nav a {
     text-align: center;
 } */
 
-/* .wrapper img {
+.wrapper img {
     margin-top: 2rem;
     width: 15rem;
     height: 15rem;
-}  */
+} 
 
 /* PRODUCTS LIST */
 
@@ -187,4 +187,27 @@ button {
 
 .email, .phone {
     display: block;
+}
+
+
+/* FOOTER */
+
+footer a, footer p {
+    color: gray;
+    text-decoration: none;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+footer a {
+    margin-right: 0.5rem;
+}
+
+footer {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 1rem;
 }

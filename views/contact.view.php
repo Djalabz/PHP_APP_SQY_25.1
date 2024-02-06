@@ -4,7 +4,7 @@ include "../partials/header.php";
 
 // On requiert notre fichier php_mailer.php qui contient les constantes pour la configuration du serveur SMTP
 // ainsi que autoload.php qui permet de charger les classes PHPMailer
-// require_once '../config/php_mailer.php';
+require_once '../config/php_mailer.php';
 require_once '../vendor/autoload.php';
 
 ?>
@@ -15,7 +15,7 @@ require_once '../vendor/autoload.php';
             <input name="email" type="email" placeholder="Votre mail ici ...">
             <input name="subject" type="text" placeholder="Le sujet de votre mail ...">
             <textarea name="body" cols="30" rows="10" placeholder="Votre message ..."></textarea>
-            <input id="contact-sub" name="submit" type="submit">
+            <input id="contact-sub  " name="submit" type="submit">
         </form>
 
         <!-- Si $error existe, on l'affiche dans un <p> -->
@@ -26,7 +26,7 @@ require_once '../vendor/autoload.php';
 
 <?php
 
-// require_once '../controllers/contact.php';
+require '../controllers/contact.php';
 include "../partials/footer.php";
 
 ?>
