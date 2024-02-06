@@ -30,6 +30,7 @@ $_SERVER['REQUEST_URI'] === '/index.php' ? $path = 'views/' : $path = '';
         <?php if (isset($_SESSION['user']['logged']) && $_SESSION['user']['logged']) : ?>
             <li><a href="<?= $path ?>profile.view.php">Profile</a></li>
             <li><a href="<?= $path ?>products.view.php">Produits</a></li>
+            <li><a href="<?= $path ?>cart.view.php">Cart</a></li>
             <li><a href="<?= $path ?>logout.php">Logout</a></li>
         <?php else : ?>
             <li><a href="<?= $path ?>login.view.php">Login</a></li>
