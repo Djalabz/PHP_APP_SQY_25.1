@@ -45,7 +45,6 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
                         $error = "Erreur lors de l'ajout : " . print_r($stmt->errorInfo());
                     }
                 } 
-        
             } else {
                 $error = "L'email n'est pas au bon format";
             }

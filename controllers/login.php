@@ -4,7 +4,7 @@
 ob_start();
 
 require_once 'views/login.view.php';
-include '../config/pdo.php';
+include 'config/pdo.php';
 
 
 if ($_SERVER['REQUEST_METHOD'] === "POST") {
@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
                     $_SESSION['user'] = $result;
                     $_SESSION['user']['logged'] = true;
 
-                    header('Location: profile.view.php');
+                    header('Location: profile');
                     ob_end_flush();
 
                 } else {
