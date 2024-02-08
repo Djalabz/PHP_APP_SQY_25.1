@@ -1,17 +1,4 @@
-<?php 
-
-session_start();
-
-include "../partials/header.php"; 
-include "../config/cURL.php";
-include "../utils/functions.php";
-
-// On vérifie l'URL pour trouver l'id du produit àrajouter au panier
-if (isset($_GET['product'])) {
-    $id = $_GET['product'];
-}
-
-?>
+<?php include "partials/header.php"; ?>
 
 <h1>Mon panier</h1>
 
@@ -34,7 +21,7 @@ if (isset($_GET['product'])) {
         <h3><?= $item['title'] ?></h3>
         <p>Prix : <?= $item['price'] ?> $</p>
         <img src="<?= $item['image'] ?>">
-        <a class="delete-btn" href="delete-product.php?delete=<?= $item['id'] ?>">Supprimer du panier</a>
+        <a class="delete-btn" href="delete?delete=<?= $item['id'] ?>">Supprimer du panier</a>
     
     <?php endforeach ?>
 
@@ -44,8 +31,5 @@ if (isset($_GET['product'])) {
 
     <?php endif ?>
 
-<?php 
 
-include "../partials/footer.php"; 
-
-?>  
+<?php include "partials/footer.php"; ?>  

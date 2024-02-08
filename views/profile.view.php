@@ -1,10 +1,9 @@
 <?php 
 
-ob_start();
 
-include '../partials/header.php'; 
-session_start();
-ob_end_flush();
+include 'partials/header.php'; 
+
+
 
 ?>
 
@@ -14,7 +13,7 @@ ob_end_flush();
 
 <div class="profile-card">
     <div class="left">
-        <img class="avatar" src="../<?= $_SESSION['user']['avatar'] ?>">
+        <img class="avatar" src="<?= $_SESSION['user']['avatar'] ?>">
         <h2><?= $_SESSION['user']['name'] ?></h2>
     </div>
     <div class="right">
@@ -48,4 +47,4 @@ ob_end_flush();
     </div>
 </div>
 
-<?php include '../partials/footer.php' ?>
+<?php include 'partials/footer.php' ?>
