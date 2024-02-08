@@ -1,5 +1,7 @@
 <?php
 
+include '../dotenv.php';
+
 // In utilise la classe PHPMailer
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
@@ -18,12 +20,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         try {
             //Server settings
             $mail->isSMTP();                                            
-            $mail->Host       = SMTP_HOST;                     
+            $mail->Host       = $mailhost;                     
             $mail->SMTPAuth   = true;                                   
-            $mail->Username   = SMTP_USERNAME;                     
-            $mail->Password   = SMTP_PASSWORD;                             
-            $mail->SMTPSecure = SMTP_ENCRYPTION;            
-            $mail->Port       = SMTP_PORT;                                    
+            $mail->Username   = $mailuser;                     
+            $mail->Password   = $mailpassword;                             
+            $mail->SMTPSecure = $mailsmtp;            
+            $mail->Port       = $mailport;                                    
 
             //Recipients
             $mail->setFrom($email);
