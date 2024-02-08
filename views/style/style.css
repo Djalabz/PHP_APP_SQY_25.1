@@ -23,8 +23,6 @@ h1 {
     margin-bottom: 3rem;
 }
 
-
-
 /* NAVBAR */
 
 nav {
@@ -33,9 +31,16 @@ nav {
     /* GLASS CSS */
     background: rgba(255, 255, 255, 0.32);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(13.5px);
+    backdrop-filter: blur(15.7px);
     -webkit-backdrop-filter: blur(13.5px);
     height: 3.5rem;
+}
+
+.cart-logo {
+    width: 1.4rem;
+    position: fixed;
+    right: 2rem;
+    margin-top: 1rem;
 }
 
 .burger-menu {
@@ -45,37 +50,41 @@ nav {
     left: 1rem;
     top: 0.6rem;
     cursor: pointer;
+    z-index: 1;
 }
 
 .menu {
     position: fixed;
-    left: -100vw;
-    width: 100vw;
-    height: 100vh;
+    left: 1.2rem;
+    width: 10vw;
+    height: 4.2rem;
     transition: all 0.2s ease-in-out;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    align-items: flex-start;
-    font-size: 2rem;
+    align-items: center;
+    font-size: 0.9rem;
+    font-weight: 600;
     opacity: 0;
+    z-index: 0;
 }
 
 .close-menu {
     font-size: 1.5rem;
     position: absolute;
-    top: 0rem;
+    top: 0.5rem;
     left: 2rem;
 }
 
 .menu li {
     margin-bottom: 1rem;
+    margin-left: 1rem;
 }
 
 .open {
-    left: 0vw;
+    left: 3.5rem;
     opacity: 100;
 }
 
@@ -93,7 +102,6 @@ nav a {
     color: black;
 }
 
-
 /* HOMEPAGE  */
 
 .wrapper {
@@ -102,8 +110,6 @@ nav a {
     flex-direction: column;
     align-items: center;
 }
-
-
 
 /* .wrapper {
     padding: 5rem;
@@ -129,9 +135,29 @@ nav a {
     margin-top: 2rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    column-gap: 1.5rem;
-    row-gap: 2rem;
+    column-gap: 1.8rem;
+    row-gap: 2.3rem;
 }
+
+.product-list h2:last-of-type {
+    font-size: 1.1rem;
+    height: 3rem;
+}
+
+.product-list h2 {
+    font-size: 1.1rem;
+    height: 5rem;
+}
+
+
+.product-list h3 {
+    font-size: 1rem;
+}
+
+.product-list li {
+    padding: 1rem;
+}
+
 
 button a {
     color: white;
@@ -156,6 +182,7 @@ form input, textarea {
 
 textarea {
     height: 8rem;
+    padding-top: 0.5rem !important;
 }
 
 input[type="submit"] {
