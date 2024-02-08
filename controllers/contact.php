@@ -1,6 +1,11 @@
 <?php
 
-include '../dotenv.php';
+require_once 'views/contact.view.php';
+include 'dotenv.php';
+// On requiert notre fichier php_mailer.php qui contient les constantes pour la configuration du serveur SMTP
+// ainsi que autoload.php qui permet de charger les classes PHPMailer
+require_once 'vendor/autoload.php';
+
 
 // In utilise la classe PHPMailer
 use PHPMailer\PHPMailer\PHPMailer;
@@ -45,3 +50,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $error = "Assurez vous que l'email est au bon format";
     }
 } 
+

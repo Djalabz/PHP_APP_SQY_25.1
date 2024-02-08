@@ -1,6 +1,6 @@
 <?php 
 
-include 'dotenv.php';
+include '../dotenv.php';
 
 // Le data source name 
 $dsn = "$dbsgbd:dbname=$dbname;host=$dbhost:$dbport"; 

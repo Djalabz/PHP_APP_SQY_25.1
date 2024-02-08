@@ -2,7 +2,6 @@
 
 include '../dotenv.php';
 
-
 class DB {
     private $sgbd;
     private $host;
