@@ -10,6 +10,7 @@ include "partials/header.php";
 <?php foreach($products as $product) : ?>
 
     <!-- Si dans ces produits un produit possède l'id transmis via l'URL ... -->
+    <!-- Mais aussi que c'est la première fois qu'on l'ajoute (q8uantity = 1 du coup) -->
     <?php if ((isset($id) && $id == $product['id']) && (!isset($_SESSION['user']['cart'][$id]))) : ?>
 
         <!-- ... On le rajoute à la partie cart de user dans $_SESSION en utilisant l'id comme clé -->
@@ -48,6 +49,5 @@ include "partials/header.php";
 
 <?php
 
-dd($_SESSION['user']['cart']);
 
 include "partials/footer.php"; ?>  
