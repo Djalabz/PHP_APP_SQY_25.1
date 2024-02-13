@@ -11,7 +11,12 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eshop PHP</title>
     <link rel="stylesheet" href="views/style/style.css">
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
     <script src="scripts/app.js" defer></script>
+
 </head>
 <body>
 
@@ -31,7 +36,7 @@ session_start();
         <?php endif ?>
     </ul>
 
-    <p class="site-title">PHP E-SHOP</p>
+    <p class="site-title"><b>PHP E-SHOP</b></p>
 
     <li><a href="cart"><img class="cart-logo" src="../assets/icons/shopping-cart.png"></a></li>
 </nav>

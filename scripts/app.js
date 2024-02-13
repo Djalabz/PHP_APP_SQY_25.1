@@ -6,10 +6,16 @@ const close_btn = document.querySelector('.close-menu');
 // Ici on ajoute un écouteur d'événement pour le click sur notre burger bouton
 burger.addEventListener('click', () => {
     menu.classList.toggle('open');
+
+
+    burger.classList.toggle('animate__animated');
+    burger.classList.toggle('animate__swing');
 })
 
 // Meme chose sur le bouton de fermeture
 close_btn.addEventListener('click', () => {
     menu.classList.remove('open');
 })
+
+
 
