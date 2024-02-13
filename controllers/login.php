@@ -6,11 +6,6 @@ ob_start();
 require_once 'views/login.view.php';
 include 'config/pdo.php';
 
-class Auth {
-
-
-}
-
 
 if ($_SERVER['REQUEST_METHOD'] === "POST") {
     if (!empty($_POST['email']) && !empty($_POST['password'])) {
