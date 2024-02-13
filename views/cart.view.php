@@ -21,9 +21,7 @@ include "partials/header.php";
     
         <?php elseif ((isset($id) && $id == $product['id']) && (isset($_SESSION['user']['cart'][$id]))) : ?>
 
-        <?php 
-            $_SESSION['user']['cart'][$id]['quantity'] += 1;
-        ?> 
+        <?php $_SESSION['user']['cart'][$id]['quantity'] += 1;?> 
 
     <?php endif ?>
 
