@@ -40,7 +40,11 @@ nav {
     width: 1.4rem;
     position: fixed;
     right: 2rem;
-    margin-top: 1rem;
+top: 1rem;
+}
+
+.site-title {
+    text-align: center;
 }
 
 .burger-menu {
@@ -111,17 +115,66 @@ nav a {
     align-items: center;
 }
 
-/* .wrapper {
-    padding: 5rem;
+.hero-section {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    width: 80vw;
     align-items: center;
 }
 
-.wrapper h1 {
-    margin: 0;
-    text-align: center;
-} */
+.hero-section h1 {
+    margin: 0 !important;
+}
+
+.hero-section > .left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: white;
+    width: 40rem;
+    height: 10rem;
+    border-radius: 50px;
+    background: #ffffff;
+    box-shadow:  29px 29px 58px #cfcfcf,
+                -29px -29px 58px #ffffff;
+}
+
+.hero-img {
+    width: 24rem !important;
+    height: 24rem !important;
+    object-fit: cover;
+    align-self: flex-end;
+    margin: 0 0 0 5rem !important;
+}
+
+.hero-section .hero-btn {
+    width: 6rem !important;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin-right: 1rem;
+}
+
+.hero-btn {
+    width: 9rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.hero-btn > a {
+    color: white;
+}
+
+.hero-btn > a:hover {
+    color: darkslategray;
+}
+
+.hero-btn:hover {
+    background-color: white;
+    color: darkslategray;
+    border: solid 1px darkslategray;
+}
 
 .wrapper img {
     margin-top: 2rem;
@@ -230,7 +283,7 @@ button {
     display: flex;
 }
 
-.left {
+.profile-card > .left {
     background: linear-gradient(90deg, darkslategrey 0%, darkgray 100%);
     width: 15rem;
     height: 100%;

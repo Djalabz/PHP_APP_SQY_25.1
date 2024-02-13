@@ -1,18 +1,15 @@
 <?php 
 
 
-ob_start();
-
-require_once 'views/login.view.php';
-include '../config/pdo.php';
-
+include 'partials/header.php';
+include 'config/pdo.php';
 
 if ($_SERVER['REQUEST_METHOD'] === "POST") {
     if (!empty($_POST['email']) && !empty($_POST['password'])) {
         $email = $_POST['email'];
         $password = $_POST['password'];
 
-        if (filter_var($email, FILTER_VALIDATE_EMAIL)){
+        if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
             
             $sql = "SELECT * FROM users WHERE email = ?";
             $stmt = $pdo->prepare($sql);
@@ -24,15 +21,13 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
                 // Mdp récuperé depuis la BDD, donc la version hashée
                 $hash = $result['password'];
 
-                if (password_verify($password, $hash)) {
 
+                if (password_verify($password, $hash)) {
                     session_start();
                     $_SESSION['user'] = $result;
                     $_SESSION['user']['logged'] = true;
 
-                    header('Location: profile.view.php');
-                    ob_end_flush();
-
+                    header('Location: profile');
                 } else {
                     $error = "Le mot de passe est incorrect";
                 }
@@ -44,3 +39,5 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
         }
     }
 }
+
+require_once 'views/login.view.php';

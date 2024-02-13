@@ -104,5 +104,4 @@ class SUV {
 // $suv = new SUV('ford', 'noir');
 // $suv->vidange();
 
-// Proposer moi une classe DB qui permettra de se connecter via PDO à notre BDD
 
