@@ -6,7 +6,7 @@ session_start();
 include "config/cURL.php";
 include "utils/functions.php";
 
-// On vérifie l'URL pour trouver l'id du produit àrajouter au panier
+// On vérifie l'URL pour trouver l'id du produit à rajouter au panier
 if (isset($_GET['product'])) {
     $id = $_GET['product'];
 }
