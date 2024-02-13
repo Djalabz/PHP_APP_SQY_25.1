@@ -38,7 +38,7 @@ session_start();
 
     <p class="site-title"><b>PHP E-SHOP</b></p>
 
-    <li><a href="cart"><img class="cart-logo" src="../assets/icons/shopping-cart.png"></a></li>
+    <li><a class="cart-link" href="cart"><img class="cart-logo" src="../assets/icons/shopping-cart.png"></a></li>
 </nav>
 
 <div class="wrapper">
