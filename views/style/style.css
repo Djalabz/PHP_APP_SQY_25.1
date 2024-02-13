@@ -40,7 +40,24 @@ nav {
     width: 1.4rem;
     position: fixed;
     right: 2rem;
-top: 1rem;
+    top: 1rem;
+}
+
+.cart-link::after {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    content:'2';
+    font-weight: bold;
+    font-size: 0.6rem;
+    width: 12px;
+    background-color: darkred;
+    border-radius: 100%;
+    color: white;
+    position: absolute;
+    padding: 0.2rem;
+    top:5px;
+    right:19px;
 }
 
 .site-title {
@@ -143,7 +160,7 @@ nav a {
 
 .hero-img {
     width: 24rem !important;
-    height: 24rem !important;
+    height: 25rem !important;
     object-fit: cover;
     align-self: flex-end;
     margin: 0 0 0 5rem !important;
