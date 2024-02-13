@@ -160,6 +160,7 @@ nav a {
     width: 9rem;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
+    color: white;
 }
 
 .hero-btn > a {
@@ -173,6 +174,7 @@ nav a {
 .hero-btn:hover {
     background-color: white;
     color: darkslategray;
+    transform: scaleX(1.1);
     border: solid 1px darkslategray;
 }
 

@@ -12,7 +12,4 @@ include 'utils/functions.php';
 <button class="hero-btn"><a href="products">LET'S SHOP !</a></button>
     
 
-
-
-
 <?php include 'partials/footer.php' ?>
