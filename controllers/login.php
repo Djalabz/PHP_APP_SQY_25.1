@@ -1,5 +1,6 @@
 <?php 
 
+ob_start();
 
 include 'partials/header.php';
 include 'config/pdo.php';
@@ -28,6 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
                     $_SESSION['user']['logged'] = true;
 
                     header('Location: profile');
+                    ob_end_flush();
                 } else {
                     $error = "Le mot de passe est incorrect";
                 }
