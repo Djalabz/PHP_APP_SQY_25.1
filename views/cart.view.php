@@ -1,4 +1,8 @@
-<?php include "partials/header.php"; ?>
+<?php 
+
+include "partials/header.php"; 
+
+?>
 
 <h1>Mon panier</h1>
 
@@ -6,10 +10,20 @@
 <?php foreach($products as $product) : ?>
 
     <!-- Si dans ces produits un produit possède l'id transmis via l'URL ... -->
-    <?php if (isset($id) && $id == $product['id']) : ?>
+    <?php if ((isset($id) && $id == $product['id']) && (!isset($_SESSION['user']['cart'][$id]))) : ?>
 
         <!-- ... On le rajoute à la partie cart de user dans $_SESSION en utilisant l'id comme clé -->
-        <?php $_SESSION['user']['cart'][$id] = $product ?>
+        <?php 
+            $_SESSION['user']['cart'][$id] = $product; 
+            $_SESSION['user']['cart'][$id]['quantity'] = 1; 
+        ?>
+    
+        <?php elseif ((isset($id) && $id == $product['id']) && (isset($_SESSION['user']['cart'][$id]))) : ?>
+
+        <?php 
+            $_SESSION['user']['cart'][$id]['quantity'] += 1;
+        ?> 
+
     <?php endif ?>
 
 <?php endforeach ?>
@@ -21,6 +35,7 @@
         <h3><?= $item['title'] ?></h3>
         <p>Prix : <?= $item['price'] ?> $</p>
         <img src="<?= $item['image'] ?>">
+        <p>Quantité : <?= $item['quantity'] ?></p>
         <a class="delete-btn" href="delete?delete=<?= $item['id'] ?>">Supprimer du panier</a>
     
     <?php endforeach ?>
@@ -31,5 +46,8 @@
 
     <?php endif ?>
 
+<?php
 
-<?php include "partials/footer.php"; ?>  
+dd($_SESSION['user']['cart']);
+
+include "partials/footer.php"; ?>  
