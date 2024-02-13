@@ -6,7 +6,6 @@ include 'dotenv.php';
 // ainsi que autoload.php qui permet de charger les classes PHPMailer
 require_once 'vendor/autoload.php';
 
-
 // In utilise la classe PHPMailer
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
@@ -45,7 +44,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         } catch (Exception $e) {
             echo "Mail erreur : {$mail->ErrorInfo}";
         }
-
     } else {
         $error = "Assurez vous que l'email est au bon format";
     }

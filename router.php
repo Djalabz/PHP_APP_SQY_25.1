@@ -3,7 +3,6 @@
 // récupérer l'uri 
 $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 
-
 // Définir le tableau associatif des routes
 $routes = [ 
     '/' => 'controllers/index.php',
@@ -11,7 +10,7 @@ $routes = [
     '/login' => 'controllers/login.php',
     '/cart' => 'controllers/cart.php',
     '/profile' => 'controllers/profile.php',
-    '/logout' => 'controllers/logout.php',
+    '/logout' => 'views/logout.php',
     '/contact' => 'controllers/contact.php',
     '/product' => 'controllers/product.php',
     '/products' => 'controllers/products.php',

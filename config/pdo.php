@@ -11,8 +11,7 @@ class DB {
     private $port;
     private $options = array(PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC);
     private $pdo;
-    public $public = "public";
-
+    
     public function __construct($sgbd, $host, $dbname, $user, $password, $port) {
         $this->sgbd = $sgbd;
         $this->host = $host;

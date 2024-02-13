@@ -6,6 +6,11 @@ ob_start();
 require_once 'views/login.view.php';
 include 'config/pdo.php';
 
+class Auth {
+
+
+}
+
 
 if ($_SERVER['REQUEST_METHOD'] === "POST") {
     if (!empty($_POST['email']) && !empty($_POST['password'])) {
@@ -15,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
         if (filter_var($email, FILTER_VALIDATE_EMAIL)){
             
             $sql = "SELECT * FROM users WHERE email = ?";
-            $stmt = $pdo->prepare($sql);
+            $stmt = $connexion->prepare($sql);
             $stmt->execute([$email]);
 
             $result = $stmt->fetch();

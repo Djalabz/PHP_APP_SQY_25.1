@@ -16,7 +16,6 @@ session_start();
 <body>
 
 <nav>
-
     <img src="../assets/icons/burger.png" class="burger-menu">
 
     <ul class="menu">
@@ -25,7 +24,7 @@ session_start();
         <?php if (isset($_SESSION['user']['logged']) && $_SESSION['user']['logged']) : ?>
             <li><a href="profile">Profile</a></li>
             <li><a href="products">Produits</a></li>
-            <li><a href="logout.php">Logout</a></li>
+            <li><a href="logout">Logout</a></li>
         <?php else : ?>
             <li><a href="login">Login</a></li>
             <li><a href="signup">Signup</a></li>
@@ -33,7 +32,6 @@ session_start();
     </ul>
 
     <li><a href="cart"><img class="cart-logo" src="../assets/icons/shopping-cart.png"></a></li>
-
 </nav>
 
 <div class="wrapper">
