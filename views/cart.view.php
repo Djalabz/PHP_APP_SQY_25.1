@@ -1,5 +1,6 @@
 <?php 
 
+ob_start();
 include "partials/header.php"; 
 
 ?>
@@ -17,11 +18,17 @@ include "partials/header.php";
         <?php 
             $_SESSION['user']['cart'][$id] = $product; 
             $_SESSION['user']['cart'][$id]['quantity'] = 1; 
+            header('Location: cart');
+            ob_end_flush();
         ?>
     
         <?php elseif ((isset($id) && $id == $product['id']) && (isset($_SESSION['user']['cart'][$id]))) : ?>
 
-        <?php $_SESSION['user']['cart'][$id]['quantity'] += 1;?> 
+        <?php   
+            $_SESSION['user']['cart'][$id]['quantity'] += 1;
+            header('Location: cart');
+            ob_end_flush();
+        ?> 
 
     <?php endif ?>
 
@@ -32,18 +39,34 @@ include "partials/header.php";
     <?php foreach($_SESSION['user']['cart'] as $item) : ?>
 
         <h3><?= $item['title'] ?></h3>
-        <p>Prix : <?= $item['price'] ?> $</p>
-        <img src="<?= $item['image'] ?>">
+        <p>Prix total : <?= (int)($item['price']) * (int)($item['quantity']) ?> $</p>
         <p>Quantité : <?= $item['quantity'] ?></p>
         <a class="delete-btn" href="delete?delete=<?= $item['id'] ?>">Supprimer du panier</a>
     
     <?php endforeach ?>
 
-<!-- Si jamais on en a pas alors on dit que le panier est vide -->
+    <!-- On vient calculer les quantités totales et le prix total -->
+    <?php 
+        $totalQty = 0;
+        $totalPrice =0;
+
+        foreach($_SESSION['user']['cart'] as $item) {
+            $totalQty += (int)$item['quantity'];
+            $totalPrice += (int)$item['price'] * (int)$item['quantity'];
+        } 
+    ?>
+
+       <h3><?= $totalQty ?> articles</h3>
+       <h3><?= $totalPrice ?> $</h3>
+
+
+    <!-- Si jamais on en a pas alors on dit que le panier est vide -->
     <?php else : ?>
         <h3>Votre panier est vide ...</h3>
+    
+    <?php  ?>
 
-    <?php endif ?>
+<?php endif ?>
 
 <?php
 
