@@ -31,6 +31,8 @@ session_start();
         <?php endif ?>
     </ul>
 
+    <p class="site-title">PHP E-SHOP</p>
+
     <li><a href="cart"><img class="cart-logo" src="../assets/icons/shopping-cart.png"></a></li>
 </nav>
 

@@ -10,7 +10,7 @@ class DB {
     private $password;
     private $port;
     private $options = array(PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC);
-    private $pdo;
+    public $pdo;
     
     public function __construct($sgbd, $host, $dbname, $user, $password, $port) {
         $this->sgbd = $sgbd;
@@ -50,5 +50,6 @@ class DB {
 };
 
 $connexion = new DB($dbsgbd, $dbhost, $dbname, $dbuser, $dbpassword, $dbport);
+$pdo = $connexion->pdo;
 
 ?>

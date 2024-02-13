@@ -26,14 +26,14 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
                 $hash = password_hash($password, PASSWORD_DEFAULT);
 
                 // Appel de la fonction checkExists() pour vérifier si un user n'existe pas déjà en BDD
-                if (checkExists('name', $name, $connexion)) {
+                if (checkExists('name', $name, $pdo)) {
                     $error = "Le nom existe déjà en BDD";
-                } else if (checkExists('email', $email, $connexion)) {
+                } else if (checkExists('email', $email, $pdo)) {
                     $error = "L'email est déjà utilisé";
                 } else {
                     // On écrit notre requete préparée 
                     $sql = "INSERT INTO users(name, email, password) VALUES(?, ?, ?)";
-                    $stmt = $connexion->prepare($sql);
+                    $stmt = $pdo->prepare($sql);
                     $result = $stmt->execute([$name, $email, $hash]);
             
                     // Si notre execute s'est bien déroulé on redirige vers une page de succès

@@ -4,8 +4,14 @@ include 'utils/functions.php';
 
 ?>
 
-    <h1>Bienvenue sur mon app PHP</h1>
-    <img src="assets/images/cocktail.png" alt="Café cocktail">
+<section class="hero-section">
+    <div class="right">
+        <img class="hero-img" src="assets/images/Romain_Jalabert_fox_web_developper_with_coffee_coding_php_minim_857de542-dbc1-428a-8fc2-8d613f60bb58.webp" alt="hero">
+    </div>
+</section>
+<button class="hero-btn"><a href="products">LET'S SHOP !</a></button>
+    
+
 
 
 
