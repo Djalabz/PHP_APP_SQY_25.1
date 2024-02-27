@@ -18,7 +18,7 @@ submitBtn.addEventListener('click', () => {
         // On ajoute le contenu texte recup depuis l'input à notre todo
         todo.textContent = input.value
 
-        // On unsère notre delete bouton dans nos todo
+        // On insère notre delete bouton dans nos todo
         todo.appendChild(deleteBtn)
 
         // On ajoute en tant qu'enfant la todo à la liste
@@ -43,6 +43,7 @@ submitBtn.addEventListener('click', () => {
         })
     }
 })
+
 
 
 
