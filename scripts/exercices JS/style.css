@@ -58,3 +58,10 @@ li {
     text-decoration: line-through;
     opacity: 50%;
 }
+
+input[type="checkbox"] {
+    position: absolute;
+    width: 1rem;
+    right: 2rem;
+}
+
