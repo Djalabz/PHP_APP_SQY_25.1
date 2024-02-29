@@ -13,3 +13,9 @@ const interval = setInterval(randomName, 50)
 btn.addEventListener('click', () => {
     clearInterval(interval)
 })
+
+window.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+        clearInterval(interval)
+    }
+})

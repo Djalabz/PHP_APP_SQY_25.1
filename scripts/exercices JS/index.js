@@ -24,6 +24,9 @@ submitBtn.addEventListener('click', () => {
         // On ajoute en tant qu'enfant la todo à la liste
         list.appendChild(todo)
 
+        // On ajoute notre liste de todos au local storage
+        saveLocalTodos(list)
+
         // On clean l'input une fois la todo soumise
         input.value = ""
 
@@ -45,10 +48,58 @@ submitBtn.addEventListener('click', () => {
 })
 
 
+document.addEventListener('DOMContentLoaded', () => {
+    let todos = [];
 
+    if (localStorage.getItem('todos') == null) {
+        todos = []
+    } else {
+        todos.push(JSON.parse(localStorage.getItem('todos')))
+    }
 
-// Récupérer la valeur de l'input que l'on injecte dans un élément HTML (par exemple li)
-// et qui s'ffichera dans notre ul de classe (output, cf le html)
+    console.log(todos)
 
-// Faire en sorte que l'on ne puisse pas ajouter de todos vides
+    todos.forEach(todo => {
+        // On créé un élément li dans lequel on insère la todo cad la valeur de l'input
+        const li = document.createElement('li')
 
+        // On crée et on insère notre bouton de delete dans chaque todo
+        const deleteBtn = document.createElement('button')
+        deleteBtn.textContent = "X"
+        deleteBtn.classList.add('delete')
+
+        // On insère notre delete bouton dans nos todo
+        li.appendChild(deleteBtn)
+
+        // Fonctionnalité de check 
+        let checkbox = document.createElement('input')
+        checkbox.setAttribute('type','checkbox')
+        todo.appendChild(checkbox)
+
+        // Avec le toggle on ajoute ou on retire la classe checked de notre todo
+        checkbox.addEventListener('click', () => {
+            todo.classList.toggle('checked')
+        })
+
+        // Suppression de la todo
+        deleteBtn.addEventListener('click', () => {
+            todo.remove();
+        })
+
+    })
+})
+
+function saveLocalTodos(list) {
+    // let todos = [];
+
+    // if (localStorage.getItem('todos') == null) {
+    //     todos = []
+    // } else {
+    //     todos.push(JSON.parse(localStorage.getItem('todos')))
+    // }
+
+    todos.push(list)
+
+    console.log(list)
+    localStorage.setItem('todos', JSON.stringify(todos))
+}
